@@ -6,6 +6,7 @@
 /**
  * struct listint_s - singly linked list
  * @n: integer
+ * @f: flag
  * @next: points to the next node
  *
  * Description: singly linked list node structure
@@ -14,6 +15,7 @@
 typedef struct listint_s
 {
 	int n;
+	int f;
 	struct listint_s *next;
 } listint_t;
 

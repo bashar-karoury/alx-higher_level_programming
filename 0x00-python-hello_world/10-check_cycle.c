@@ -11,27 +11,15 @@ int check_cycle(listint_t *list)
 {
 
 	listint_t *temp = list;
-	listint_t *trav = list;
-	int result = 0;
 
 	while (temp != NULL)
 	{
-		trav = list;
-		if (temp->next == temp)
-		{
-			result = 1;
-			return (result);
+		if(temp->f == 1)
+		{	
+			return(1);
 		}
-		while (trav != temp)
-		{
-			if (temp->next == trav)
-			{
-				result = 1;
-				return (result);
-			}
-			trav = trav->next;
-		}
+		temp->f = 1;
 		temp = temp->next;
 	}
-	return (result);
+	return (0);
 }
