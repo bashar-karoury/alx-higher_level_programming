@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+import py_compile
+import os
+pre_compiled_file = os.environ.get('PYFILE')
+compiled_file = pre_compiled_file + 'c'
+
+py_compile.compile(pre_compiled_file, cfile=compiled_file)
