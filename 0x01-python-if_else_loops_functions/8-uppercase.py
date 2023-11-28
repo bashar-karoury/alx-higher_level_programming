@@ -3,8 +3,8 @@
 
 def uppercase(str):
     for c in str:
-        if ord(c) > 96:
-            print("{0:c}".format(ord(c) - 0x20), end='')
-        else:
-            print(c, end='')
+        asc = ord(c)
+        if asc > 96:
+            asc = asc - 0x20
+        print("{:c}".format(asc), end='')
     print()
