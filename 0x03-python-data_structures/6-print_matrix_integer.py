@@ -7,6 +7,6 @@ def print_matrix_integer(matrix=[[]]):
         for j in i:
             if first is False:
                 print(" ", end='')
-            print("{}".format(j), end='')
+            print("{:d}".format(j), end='')
             first = False
         print("")
