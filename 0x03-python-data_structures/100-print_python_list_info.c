@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include <sys/types.h>
-#include "/usr/include/python3.8/object.h"
-#include "/usr/include/python3.8/Python.h"
+#include "object.h"
+#include "Python.h"
 /**
  * print_python_list_info - prints some basic info about Python list
  * @p: pointer to python object
