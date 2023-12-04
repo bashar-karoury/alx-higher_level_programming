@@ -1,7 +1,6 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <stddef.h>
-listint_t *add_nodeint_begin(listint_t **head, const int n);
 /**
  * is_palindrome - checks if a singly linked list is a palindrome.
  * @head: double pointer to head node
@@ -61,8 +60,6 @@ listint_t *add_nodeint_begin(listint_t **head, const int n)
 	new->n = n;
 	new->next = *head;
 	*head = new;
-
-
 	return (new);
 }
 
