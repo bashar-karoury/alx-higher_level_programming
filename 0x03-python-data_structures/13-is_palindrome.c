@@ -48,7 +48,7 @@ int is_palindrome(listint_t **head)
  * @n: integer to be included in new node
  * Return: address of the new element or NULL if it fails
  */
-listint_t *add_nodeint_begin(listint_t **head, const int n)
+/* listint_t *add_nodeint_begin(listint_t **head, const int n)
 {
 	listint_t *new;
 
@@ -61,4 +61,4 @@ listint_t *add_nodeint_begin(listint_t **head, const int n)
 	*head = new;
 	return (new);
 }
-
+*/
