@@ -9,6 +9,8 @@
  */
 int is_palindrome(listint_t **head)
 {
+	listint_t *trav_node = *head;
+	listint_t *reverse = NULL;
 	int result = 1;
 
 	if (head == NULL)
@@ -16,8 +18,6 @@ int is_palindrome(listint_t **head)
 	if (*head == NULL)
 		return (1);
 
-	listint_t *trav_node = *head;
-	listint_t *reverse = NULL;
 
 	/* traverse to last node and copy in reverse order*/
 	while (trav_node != NULL)
