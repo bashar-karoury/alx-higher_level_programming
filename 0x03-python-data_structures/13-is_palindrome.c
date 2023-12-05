@@ -1,7 +1,9 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <stddef.h>
-
+#include <stdio.h>
+int palindrome_check(listint_t **compare_head,
+				listint_t *trav_head, int *check_flag);
 listint_t *get_node_at_index(listint_t *head, int index);
 int list_length(listint_t *head);
 /**
@@ -13,27 +15,47 @@ int list_length(listint_t *head);
 int is_palindrome(listint_t **head)
 {
 	int result = 1;
-	int list_len = 0;
-	int i = 0;
+	int check_flag = 1;
 
 	if (head == NULL)
 		return (0);
 	if (*head == NULL)
 		return (1);
-	list_len = list_length(*head);
 
-	for (i = 0; i < list_len / 2; i++)
-	{
-		listint_t *first = get_node_at_index(*head, i);
-		listint_t *second = get_node_at_index(*head, list_len - i - 1);
-
-		if (first->n != second->n)
-		{	result = 0;
-			break;
-		}
-	}
+	result  = palindrome_check(head, *head, &check_flag);
 
 	return (result);
+}
+
+
+int	palindrome_check(listint_t **compare_head, listint_t *trav_head,
+												 int *check_flag)
+{
+	if (trav_head == NULL)
+		return (0);
+
+	palindrome_check(compare_head, trav_head->next, check_flag);
+	if (*check_flag == 0)
+	{
+		return (0);
+	}
+	/* Stop when two pointer equates*/
+
+	if (*compare_head == trav_head)
+	{
+		*check_flag = 1;
+		(*compare_head) = (*compare_head)->next;
+		return (1);
+	}
+	if ((*compare_head)->n == trav_head->n)
+	{
+		(*compare_head) = (*compare_head)->next;
+	}
+	else
+	{
+		*check_flag = 0;
+	}
+	return (1);
 }
 
 /**
