@@ -1,6 +1,9 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <stddef.h>
+
+listint_t *get_node_at_index(listint_t *head, int index);
+int list_length(listint_t *head);
 /**
  * is_palindrome - checks if a singly linked list is a palindrome.
  * @head: double pointer to head node
@@ -9,57 +12,70 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *trav_node = *head;
-	listint_t *reverse = NULL;
 	int result = 1;
+	int list_len = 0;
+	int i = 0;
 
 	if (head == NULL)
 		return (0);
 	if (*head == NULL)
 		return (1);
+	list_len = list_length(*head);
 
-
-	/* traverse to last node and copy in reverse order*/
-	while (trav_node != NULL)
+	for (i = 0; i < list_len / 2; i++)
 	{
-		add_nodeint_begin(&reverse, trav_node->n);
-		trav_node = trav_node->next;
-	}
+		listint_t *first = get_node_at_index(*head, i);
+		listint_t *second = get_node_at_index(*head, list_len - i - 1);
 
-	trav_node = *head;
-	/* now compare *head with reverse */
-	while (trav_node != NULL)
-	{
-		if (trav_node->n != reverse->n)
-		{
-			result = 0;
+		if (first->n != second->n)
+		{	result = 0;
 			break;
 		}
-
-		trav_node = trav_node->next;
-		reverse = reverse->next;
 	}
 
-	free_listint(reverse);
 	return (result);
 }
-/**
- * add_nodeint_begin - adds a new node at the beginning of a listint_t list
- * @head: pointer to pointer of first node of listint_t list
- * @n: integer to be included in new node
- * Return: address of the new element or NULL if it fails
- */
-listint_t *add_nodeint_begin(listint_t **head, const int n)
-{
-	listint_t *new;
 
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
+/**
+ * get_node_at_index - returns node pointer at specific index
+ * @head: pointer to head node of list
+ * @index: index at which node should be returned
+ *
+ * Return: node at index, NULL if failed
+ */
+listint_t *get_node_at_index(listint_t *head, int index)
+{
+	int idx = 0;
+
+	if (index < 0)
 		return (NULL);
 
-	new->n = n;
-	new->next = *head;
-	*head = new;
-	return (new);
+	while (head != NULL && idx < index)
+	{
+		head = head->next;
+		idx++;
+	}
+
+	if (idx == index)
+		return (head);
+	else
+		return (NULL);
 }
 
+/**
+ * list_length - calculate length of list
+ * @head: head node pointer
+ *
+ * Return: length of list as int
+ */
+int list_length(listint_t *head)
+{
+	int len = 0;
+
+	while (head != NULL)
+	{
+		head = head->next;
+		len++;
+	}
+	return (len);
+}
