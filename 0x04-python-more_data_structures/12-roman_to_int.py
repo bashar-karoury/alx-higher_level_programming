@@ -7,13 +7,13 @@ def roman_to_int(roman_string):
     number = 0
     if roman_string is None:
         return None
-    for c in roman_string:
+    for c in reversed(roman_string):
         if c in roman:
             rank = roman[c]
-            if rank > current_rank:
-                number = rank - number
-            else:
+            if rank >= current_rank:
                 number = rank + number
+            else:
+                number = number - rank
             current_rank = rank
         else:
             return None
