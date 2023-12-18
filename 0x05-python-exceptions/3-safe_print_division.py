@@ -9,4 +9,4 @@ def safe_print_division(a, b):
         result = None
     finally:
         print("{}".format(result))
-        return result
+    return result
