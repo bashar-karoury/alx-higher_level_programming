@@ -12,7 +12,7 @@ class MagicClass:
     Attributes:
         radius (int): radius of circle
     """
-    def __init__(self, radius):
+    def __init__(self, radius=None):
         """Initializes a new instance of the class.
 
         Args:
