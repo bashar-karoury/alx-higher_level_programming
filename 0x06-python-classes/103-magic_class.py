@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import math
 """Module that provides MagicClass
 
 Classes:
     MagicClass: defines a circle
 """
+import math
 
 
 class MagicClass:
