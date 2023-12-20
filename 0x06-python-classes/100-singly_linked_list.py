@@ -84,7 +84,6 @@ class SinglyLinkedList:
 
         trav = self.__head
         # create new node
-        print("inserting {}".format(value))
         new_node = Node(value)
         if trav is None:
             self.__head = new_node
