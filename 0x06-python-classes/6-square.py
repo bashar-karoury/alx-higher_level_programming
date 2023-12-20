@@ -60,8 +60,8 @@ class Square:
         Args:
         value (tuple): position of square.
         """
-        if type(value) != tuple or len(value) != 2 or
-        value[0] < 0 or value[1] < 0:
+        v = value
+        if type(value) != tuple or len(value) != 2 or v[0] < 0 or v[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
