@@ -61,7 +61,7 @@ class Square:
         value (tuple): position of square.
         """
         v = value
-        if type(value) != tuple or len(value) != 2 or v[0] < 0 or v[1] < 0:
+        if not is_tuple_of_positive_2_int(value):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -88,3 +88,21 @@ class Square:
                 print(end='\n')
         else:
             print(end='\n')
+
+
+def is_tuple_of_positive_2_int(value):
+    """ test if the passed argument is tuple of two positive integers
+     Args:
+        value (tuple): tuple of int
+
+    Returns:
+        True if test passes, False else
+    """
+    result = True
+    if type(value) != tuple:
+        return False
+    if type(value[1]) != int or type(value[0]) != int:
+        return False
+    if value[0] < 0 or value[1] < 0:
+        return False
+    return True
