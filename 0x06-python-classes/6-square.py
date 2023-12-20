@@ -92,7 +92,7 @@ class Square:
 
 def is_tuple_of_positive_2_int(value):
     """ test if the passed argument is tuple of two positive integers
-     Args:
+    Args:
         value (tuple): tuple of int
 
     Returns:
@@ -100,6 +100,8 @@ def is_tuple_of_positive_2_int(value):
     """
     result = True
     if type(value) != tuple:
+        return False
+    if len(value) != 2:
         return False
     if type(value[1]) != int or type(value[0]) != int:
         return False
