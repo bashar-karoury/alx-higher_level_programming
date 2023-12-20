@@ -84,6 +84,7 @@ class SinglyLinkedList:
 
         trav = self.__head
         # create new node
+        print("inserting {}".format(value))
         new_node = Node(value)
         if trav is None:
             self.__head = new_node
@@ -92,7 +93,7 @@ class SinglyLinkedList:
             new_node.next_node = trav
         else:
             prev = self.__head
-            while trav and value > trav.data:
+            while trav and value >= trav.data:
                 prev = trav
                 trav = trav.next_node
             # link prev to new node
