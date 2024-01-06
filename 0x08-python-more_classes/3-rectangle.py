@@ -72,7 +72,7 @@ class Rectangle:
     def __str__(self):
         """ draw rec."""
         string = ""
-        if i and j:
+        if self.height and self.width:
             for i in range(self.height):
                 j = 0
                 for j in range(self.width):
