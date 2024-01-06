@@ -80,7 +80,7 @@ class Rectangle:
             for i in range(self.height):
                 j = 0
                 for j in range(self.width):
-                    string += Rectangle.print_symbol
+                    string += str(self.print_symbol)
                 if i < self.height - 1:
                     string += '\n'
         return string
