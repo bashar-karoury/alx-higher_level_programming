@@ -72,10 +72,11 @@ class Rectangle:
     def __str__(self):
         """ draw rec."""
         string = ""
-        for i in range(self.height):
-            j = 0
-            for j in range(self.width):
-                string += '#'
-            if i < self.height - 1:
-                string += '\n'
+        if i and j:
+            for i in range(self.height):
+                j = 0
+                for j in range(self.width):
+                    string += '#'
+                if i < self.height - 1:
+                    string += '\n'
         return string
