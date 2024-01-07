@@ -1,0 +1,20 @@
+Test Cases for say_my_name function
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("bashar", "karoury")
+My name is bashar karoury
+>>> say_my_name("bashar")
+My name is bashar
+>>> say_my_name(0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bashar/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 13, in say_my_name
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+>>> say_my_name("ali", 1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bashar/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 15, in say_my_name
+    raise TypeError("last_name must be a string")
+TypeError: last_name must be a string
+>>> say_my_name('a','b')
+My name is a b
