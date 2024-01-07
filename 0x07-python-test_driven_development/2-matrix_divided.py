@@ -3,6 +3,15 @@
 
 
 def matrix_divided(matrix, div):
+    """ This functions divide matrix by number
+    
+    Args:
+        matrix (list of lists): matrix to be divided
+        div (int, float): the dividend
+
+    Returns:
+        (list of lists): the new matrix
+    """
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
     if div == 0:
