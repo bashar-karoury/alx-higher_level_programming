@@ -1,0 +1,52 @@
+Tests For 5-text_indentation task
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("")
+>>> text_indentation("A")
+A
+>>> text_indentation("A\n")
+A
+>>> text_indentation("A.A\n")
+A.
+<BLANKLINE>
+A
+>>> text_indentation("A..A\n")
+A.
+<BLANKLINE>
+.
+<BLANKLINE>
+A
+>>> text_indentation("How?Where?Should??")
+How?
+<BLANKLINE>
+Where?
+<BLANKLINE>
+Should?
+<BLANKLINE>
+?
+<BLANKLINE>
+>>> text_indentation("Semi:Semi:")
+Semi:
+<BLANKLINE>
+Semi:
+<BLANKLINE>
+>>> text_indentation("Semi?Semi:")
+Semi?
+<BLANKLINE>
+Semi:
+<BLANKLINE>
+>>> text_indentation("   Semi?Semi:")
+Semi?
+<BLANKLINE>
+Semi:
+<BLANKLINE>
+>>> text_indentation("   Semi?Semi:   ")
+Semi?
+<BLANKLINE>
+Semi:
+<BLANKLINE>
+>>> text_indentation("Semi?Semi:   ")
+Semi?
+<BLANKLINE>
+Semi:
+<BLANKLINE>
