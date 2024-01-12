@@ -33,3 +33,8 @@ class Testing_max_integer(unittest.TestCase):
         """ testing functin takes reveresed ordered list
         """
         self.assertEqual(max_integer([14, 3, 4]), 14)
+
+    def test_Max_Middle_list(self):
+        """ testing functin takes reveresed ordered list
+        """
+        self.assertEqual(max_integer([2, 6, 14, 3, 4]), 14)
