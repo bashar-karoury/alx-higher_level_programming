@@ -28,24 +28,24 @@ def matrix_mul(m_a, m_b):
     if type(m_b[0]) == list:
         b_row_size = len(m_b[0])
 
-    for l in m_a:
-        if type(l) != list:
+    for lst in m_a:
+        if type(lst) != list:
             raise TypeError("m_a must be a list of lists")
-        if not l:
+        if not lst:
             raise ValueError("m_a can't be empty")
-        if len(l) != a_row_size:
+        if len(lst) != a_row_size:
             raise TypeError("each row of m_a must be of the same size")
-        for element in l:
+        for element in lst:
             if type(element) not in [int, float]:
                 raise TypeError("m_a should contain only integers or floats")
-    for l in m_b:
-        if type(l) != list:
+    for lst in m_b:
+        if type(lst) != list:
             raise TypeError("m_b must be a list of lists")
-        if not l:
+        if not lst:
             raise ValueError("m_b can't be empty")
-        if len(l) != b_row_size:
+        if len(lst) != b_row_size:
             raise TypeError("each row of m_b must be of the same size")
-        for element in l:
+        for element in lst:
             if type(element) not in [int, float]:
                 raise TypeError("m_b should contain only integers or floats")
 
