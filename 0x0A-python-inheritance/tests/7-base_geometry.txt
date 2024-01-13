@@ -1,0 +1,21 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("int1", 10)
+>>> bg.integer_validator("int1", 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bashar/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 28, in integer_validator
+    raise ValueError("{} must be greater than 0".format(name))
+ValueError: int1 must be greater than 0
+>>> bg.integer_validator("int1", 7.6)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bashar/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 26, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: int1 must be an integer
+>>> bg.integer_validator("int1", -23)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bashar/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 28, in integer_validator
+    raise ValueError("{} must be greater than 0".format(name))
+ValueError: int1 must be greater than 0
