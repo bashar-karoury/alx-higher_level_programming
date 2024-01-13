@@ -13,6 +13,6 @@ def add_attribute(obj, name, value):
             value: value of attribute to be added
     """
     if type(obj).__module__ == 'builtins' or hasattr(obj, name):
-        raise TypeError("can't add new attribute ")
+        raise TypeError("can't add new attribute")
     else:
         obj.name = value
