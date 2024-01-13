@@ -12,7 +12,15 @@ def add_attribute(obj, name, value):
             name : name of attribute
             value: value of attribute to be added
     """
-    if type(obj).__module__ == 'builtins' or hasattr(obj, name):
+
+    if (
+        type(obj).__module__ == 'builtins' or
+        hasattr(obj, name) or
+        (
+            hasattr(obj, '__slots__') and
+            name not in getattr(obj, '__slots__', [])
+        )
+    ):
         raise TypeError("can't add new attribute")
     else:
         setattr(obj, name, value)
