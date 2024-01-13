@@ -19,3 +19,43 @@ Traceback (most recent call last):
   File "/home/bashar/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 28, in integer_validator
     raise ValueError("{} must be greater than 0".format(name))
 ValueError: int1 must be greater than 0
+>>> bg.area()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bashar/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 13, in area
+    raise Exception("area() is not implemented")
+Exception: area() is not implemented
+>>> bg.area("1")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: area() takes 1 positional argument but 2 were given
+>>> bg.integer_validator("width", "width")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bashar/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 26, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: width must be an integer
+>>> bg.integer_validator("width", [1, 3, 4])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bashar/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 26, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: width must be an integer
+>>> bg.integer_validator("width", (1, 3, 4))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bashar/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 26, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: width must be an integer
+>>> bg.integer_validator("width", {1, 3})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bashar/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 26, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: width must be an integer
+>>> bg.integer_validator("width", None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bashar/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 26, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: width must be an integer
