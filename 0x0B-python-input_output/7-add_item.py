@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-""" Module that continas scirpt to add args to a python list
-    and then save them to a file """
 import sys
 
 
