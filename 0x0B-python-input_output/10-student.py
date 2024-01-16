@@ -25,7 +25,8 @@ class Student:
             Returns:
                 (dict): dictonray rep
         """
+        dic = self.__dict__
         if not attrs:
-            return self.__dict__
+            return dic
         else:
-            return [attr for attr in self.__dict__ if attr in attrs]
+            return {attr: dic[attr] for attr in attrs if attr in dic}
