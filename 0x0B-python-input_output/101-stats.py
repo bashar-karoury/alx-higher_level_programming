@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """
-Script reads stdin line by line and computes metrics
+This script reads input from stdin line by line and computes metrics.
 """
-
 i = 0
 status_dict = {}
 total_file_size = 0
