@@ -75,6 +75,9 @@ class Base:
     def create(cls, **dictionary):
         """ returns an instance with all attributes already set
         """
-        obj = cls(1, 1)
+        if cls.__name__ == 'Square':
+            obj = cls(1)
+        else:
+            obj = cls(1, 1)
         obj.update(**dictionary)
         return obj
