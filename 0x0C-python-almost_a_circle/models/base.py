@@ -50,6 +50,7 @@ class Base:
         filename = "{}.json".format(cls.__name__)
         with open(filename, mode='w', encoding="utf-8") as fi:
             ls_dict = []
-            for obj in list_objs:
-                ls_dict.append(obj.to_dictionary())
+            if list_objs:
+                for obj in list_objs:
+                    ls_dict.append(obj.to_dictionary())
             fi.write(Base.to_json_string(ls_dict))
