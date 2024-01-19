@@ -54,3 +54,19 @@ class Base:
                 for obj in list_objs:
                     ls_dict.append(obj.to_dictionary())
             fi.write(Base.to_json_string(ls_dict))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ funcitons that returns the list of json string representation
+
+            Args:
+                json_string (str): string representing a list of
+                                    dictionaries
+            Returns:
+                (list of dictionaries): list of dictionaries
+        """
+        import json
+        if json_string is None or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
