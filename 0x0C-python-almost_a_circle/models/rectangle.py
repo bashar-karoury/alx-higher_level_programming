@@ -130,4 +130,4 @@ class Rectangle(Base):
         """ string representation of rec objects
         """
         return ("[Rectangle] ({}) {}/{} - {}/{}"
-                .format(self.id, self.x, self.y, self.width, self.hight))
+                .format(self.id, self.x, self.y, self.width, self.height))
