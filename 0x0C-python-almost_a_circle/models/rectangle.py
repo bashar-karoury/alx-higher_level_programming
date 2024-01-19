@@ -49,7 +49,7 @@ class Rectangle(Base):
             Returns:
                 (int) : height of rec
         """
-        return self.__width
+        return self.__height
 
     @height.setter
     def height(self, height):
