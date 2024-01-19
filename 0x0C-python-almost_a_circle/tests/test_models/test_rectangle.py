@@ -19,6 +19,25 @@ class TestRecInit(unittest.TestCase):
         self.assertEqual(rec.y, 4)
         self.assertEqual(rec.id, 1)
 
+    def test_init_no_id_x_y(self):
+        """ test init function auto incrementing id
+        """
+        rec = Rectangle(1, 2)
+        self.assertEqual(rec.width, 1)
+        self.assertEqual(rec.height, 2)
+        self.assertEqual(rec.x, 0)
+        self.assertEqual(rec.y, 0)
+
+    def test_init_no_id_y(self):
+        """ test init function auto incrementing id
+        """
+        rec = Rectangle(1, 2, 3)
+        self.assertEqual(rec.width, 1)
+        self.assertEqual(rec.height, 2)
+        self.assertEqual(rec.x, 3)
+        self.assertEqual(rec.y, 0)
+        self.assertEqual(rec.id, 1)
+ 
     def test_init_given_id(self):
         """ test init function assign given id to object
         """
@@ -84,3 +103,13 @@ class TestRecInit(unittest.TestCase):
         """
         with self.assertRaises(ValueError):
             rec = Rectangle(1, 2, 4, -5, 6)
+
+    def test_area(self):
+        rec = Rectangle(2, 4, 5, 6)
+        self.assertEqual(rec.area(), 8)
+
+    def test_display(self):
+        rec = Rectangle(4, 6)
+
+    def test_str(self):
+        rec = Rectangle(1, 2, 3, 4, 5)
