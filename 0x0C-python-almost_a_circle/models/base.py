@@ -91,10 +91,13 @@ class Base:
         """
 
         filename = "{}.json".format(cls.__name__)
-        with open(filename, mode='r', encoding="utf-8") as fi:
-            json_string = fi.read()
-            lst_dict = cls.from_json_string(json_string)
-            lst_obj = []
-            for dct in lst_dict:
-                lst_obj.append(cls.create(**dct))
-            return lst_obj
+        try:
+            with open(filename, mode='r', encoding="utf-8") as fi:
+                json_string = fi.read()
+        except FileNotFoundError:
+            return []
+        lst_dict = cls.from_json_string(json_string)
+        lst_obj = []
+        for dct in lst_dict:
+            lst_obj.append(cls.create(**dct))
+        return lst_obj
