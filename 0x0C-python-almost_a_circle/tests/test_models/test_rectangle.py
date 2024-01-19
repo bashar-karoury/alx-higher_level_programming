@@ -24,3 +24,63 @@ class TestRecInit(unittest.TestCase):
         """
         rec1 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(rec1.id, 5)
+
+    def test_non_int_width_validation(self):
+        """ test width not int
+        """
+        with self.assertRaises(TypeError):
+            rec = Rectangle('1', 2, 4, 5, 6)
+
+    def test_non_int_height_validation(self):
+        """ test height not int
+        """
+        with self.assertRaises(TypeError):
+            rec = Rectangle(1, '2', 4, 5, 6)
+
+    def test_non_int_x_validation(self):
+        """ test x not int
+        """
+        with self.assertRaises(TypeError):
+            rec = Rectangle(1, 2, '4', 5, 6)
+
+    def test_non_int_y_validation(self):
+        """ test y not int
+        """
+        with self.assertRaises(TypeError):
+            rec = Rectangle(1, 2, 4, '5', 6)
+
+    def test_zero_width_validation(self):
+        """ test width zero
+        """
+        with self.assertRaises(ValueError):
+            rec = Rectangle(0, 2, 4, 5, 6)
+
+    def test_zero_height_validation(self):
+        """ test height zero
+        """
+        with self.assertRaises(ValueError):
+            rec = Rectangle(1, 0, 4, 5, 6)
+
+    def test_neg_width_validation(self):
+        """ test width negative
+        """
+        with self.assertRaises(ValueError):
+            rec = Rectangle(-1, 2, 4, 5, 6)
+
+    def test_neg_height_validation(self):
+        """ test height negative
+        """
+        with self.assertRaises(ValueError):
+            rec = Rectangle(1, -2, 4, 5, 6)
+
+    def test_neg_x_validation(self):
+        """ test x negative
+        """
+        with self.assertRaises(ValueError):
+            rec = Rectangle(1, 2, -4, 5, 6)
+
+    def test_neg_y_validation(self):
+        """ test y negative
+        """
+        with self.assertRaises(ValueError):
+            rec = Rectangle(1, 2, 4, -5, 6)
