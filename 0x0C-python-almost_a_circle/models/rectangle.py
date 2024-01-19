@@ -155,4 +155,10 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ function to get dictionary representation of rec
         """
-        return self.__dict__
+        dct = {}
+        dct['id'] = self.id
+        dct['width'] = self.width
+        dct['height'] = self.height
+        dct['x'] = self.x
+        dct['y'] = self.y
+        return dct
