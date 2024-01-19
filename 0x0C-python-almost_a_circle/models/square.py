@@ -63,11 +63,11 @@ class Square(Rectangle):
                 setattr(self, k, v)
 
     def to_dictionary(self):
-        """ function to get dictionary representation of rec
+        """ function to get dictionary representation of square
         """
         dct = {}
         dct['id'] = self.id
         dct['size'] = self.size
         dct['x'] = self.x
         dct['y'] = self.y
-    return dct
+        return dct
