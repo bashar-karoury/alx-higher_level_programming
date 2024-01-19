@@ -151,3 +151,8 @@ class Rectangle(Base):
         elif kwargs:
             for k, v in kwargs.items():
                 setattr(self, k, v)
+
+    def to_dictionary(self):
+        """ function to get dictionary representation of rec
+        """
+        return self.__dict__
