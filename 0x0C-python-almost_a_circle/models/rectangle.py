@@ -117,3 +117,11 @@ class Rectangle(Base):
         """ calculate area of rec
         """
         return self.width * self.height
+
+    def display(self):
+        """ display rec in stdout
+        """
+        for i in range(self.height):
+            for j in range(self.width):
+                print('#', end='')
+            print("")
