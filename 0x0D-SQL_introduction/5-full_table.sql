@@ -1,3 +1,3 @@
 -- describe tables
 -- DESC table in database
-DESC first_table;
+SHOW CREATE TABLE first_table;
