@@ -7,16 +7,20 @@ import MySQLdb
 username = sys.argv[1]
 password = sys.argv[2]
 database = sys.argv[3]
-db = MySQLdb.connect(
+state_name = sys.argv[4]
+
+if ';' not in state_name:
+    db = MySQLdb.connect(
                     host="localhost",
                     user=username,
                     passwd=password,
                     db=database
                 )
-cur = db.cursor()
-cur.execute("SELECT cities.id, cities.name, states.name FROM states JOIN cities ON states.id = cities.state_id")
-rows = cur.fetchall()
-for row in rows:
-    print(row)
-cur.close()
-db.close()
+    cur = db.cursor()
+    cur.execute("SELECT cities.name FROM states JOIN cities ON states.id = cities.state_id WHERE states.name = '{}'".format(state_name))
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+
+    cur.close()
+    db.close()
