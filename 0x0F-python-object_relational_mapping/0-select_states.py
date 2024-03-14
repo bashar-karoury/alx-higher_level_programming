@@ -9,7 +9,7 @@ password = sys.argv[2]
 database = sys.argv[3]
 
 db = MySQLdb.connect(
-                    host="localhost",
+                    host="localhost:3306",
                     user=username,
                     passwd=password,
                     db=database

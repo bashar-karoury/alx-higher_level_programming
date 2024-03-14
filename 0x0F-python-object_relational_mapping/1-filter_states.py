@@ -19,3 +19,5 @@ cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
 rows = cur.fetchall()
 for row in rows:
     print(row)
+cur.close()
+db.close()
