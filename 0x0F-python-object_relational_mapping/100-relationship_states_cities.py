@@ -22,8 +22,11 @@ if __name__ == "__main__":
     State.cities = relationship("City", order_by=City.id,
                                 back_populates="state")
     Base.metadata.create_all(engine)
+    california = State(name='California')
     san_fran = session.query(State).filter_by(name='San Francisco').first()
-    if san_fran:
-        california = State(name='California', cities=[san_fran])
+    if not san_fran:
+        san_fran = City(name='san_francisco', state=california)
+        session.add(san_fran)
         session.add(california)
+    california.cities = [san_fran]
     session.commit()
