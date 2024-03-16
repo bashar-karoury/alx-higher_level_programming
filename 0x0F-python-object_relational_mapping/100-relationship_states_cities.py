@@ -19,8 +19,7 @@ if __name__ == "__main__":
     from sqlalchemy.orm import sessionmaker
     Session = sessionmaker(bind=engine)
     session = Session()
-    State.cities = relationship("City", order_by=City.id,
-                                back_populates="state")
+
     Base.metadata.create_all(engine)
     california = State(name='California')
     san_fran = session.query(State).filter_by(name='San Francisco').first()
