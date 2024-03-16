@@ -20,5 +20,8 @@ if __name__ == "__main__":
     from sqlalchemy.orm import sessionmaker
     Session = sessionmaker(bind=engine)
     session = Session()
-    state_1 = session.query(State).filter_by(name=state_name).one()
-    print(state_1.id)
+    state_1 = session.query(State).filter_by(name=state_name).first()
+    if (state_1):
+        print(state_1.id)
+    else:
+        print('Not found')
