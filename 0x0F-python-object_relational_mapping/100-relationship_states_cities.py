@@ -23,9 +23,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     california = State(name='California')
     san_fran = session.query(State).filter_by(name='San Francisco').first()
-    """if not san_fran:
+    if not san_fran:
         san_fran = City(name='San Francisco', state=california)
-        session.add(san_fran)"""
+        session.add(san_fran)
     california.cities = [san_fran]
     session.add(california)
     session.commit()
