@@ -20,4 +20,6 @@ def find_peak(l):
         else:
             if check_next:
                 break
+            else:
+                check_next = 0
     return (possible_peak)
