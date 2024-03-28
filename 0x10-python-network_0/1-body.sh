@@ -1,3 +1,3 @@
 #!/bin/bash
-# Bash script to display size of body of responce
-curl -X GET "$1"
+# Bash script to display response of GET request
+curl -L -X GET "$1"
