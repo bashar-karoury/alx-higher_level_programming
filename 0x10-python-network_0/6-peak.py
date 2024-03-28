@@ -8,18 +8,18 @@ def find_peak(l):
     """
     if not l:
         return None
-    if len(l) == 1:
-        return l
 
-    possible_peak = l[0]
-    check_next = 0
-    for i in range(1, len(l)):
-        if l[i] >= l[i-1]:
-            possible_peak = l[i]
-            check_next = 1
-        else:
-            if check_next:
-                break
-            else:
-                check_next = 0
-    return (possible_peak)
+    if len(l) == 1:
+        return (l[0])
+    # get the middle value
+    middle = int(len(l)/2)
+
+    # check middle if a find_peak
+    if l[middle] <= l[middle - 1]:
+        # go left
+        return find_peak(l[:middle])
+    elif l[middle] <= l[middle + 1]:
+        # go right
+        return find_peak(l[middle+1:])
+    else:
+        return l[middle]
