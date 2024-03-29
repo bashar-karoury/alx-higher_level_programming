@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This Module takes url as an argument, and fetch X-Request-Id value in header
+""" This Module takes url as an argument, and fetch X-Request-Id value
 """
 import urllib.request
 import sys
