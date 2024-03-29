@@ -7,7 +7,7 @@ import requests
 import sys
 try:
     r = requests.get(sys.argv[1])
-    value = r.headers["X-Request-Id"]
+    value = r.headers['X-Request-Id']
     print("{}".format(value))
 except Exception as e:
-    print(e)
+    pass
