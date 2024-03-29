@@ -8,6 +8,6 @@ try:
     with urllib.request.urlopen(req) as response:
         print("{}".format(response.read().decode('utf-8')))
 except urllib.error.HTTPError as e:
-    print("Error code: {}".fomrat(e.code))
+    print("Error code: {}".format(e.code))
 except Exception as e:
     pass
