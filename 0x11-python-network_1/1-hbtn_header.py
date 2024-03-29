@@ -9,4 +9,4 @@ try:
         value = response.headers["X-Request-Id"]
         print("{}".format(value))
 except urllib.error.URLError as e:
-    pass
+    print(e)
