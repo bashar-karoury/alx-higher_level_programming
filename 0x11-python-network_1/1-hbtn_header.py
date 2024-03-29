@@ -8,5 +8,5 @@ try:
     with urllib.request.urlopen(req) as response:
         value = response.headers["X-Request-Id"]
         print("{}".format(value))
-except e:
+except Exception  as e:
     pass
