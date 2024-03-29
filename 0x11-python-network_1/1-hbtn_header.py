@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" This script fetch a url and displays response body
+""" This Module takes url as an argument, and fetch X-Request-Id value
+in header
 """
 import urllib.request
 import sys
