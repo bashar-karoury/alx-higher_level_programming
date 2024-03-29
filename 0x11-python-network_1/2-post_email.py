@@ -9,7 +9,6 @@ try:
     data = urllib.parse.urlencode(data)
     data = data.encode('ascii')
     req = urllib.request.Request(sys.argv[1], data)
-    print(req)
     with urllib.request.urlopen(req) as response:
         value = response.read()
         print("{}".format(value.decode('utf-8')))
