@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+""" This Module takes url as an argument, and fetch X-Request-Id value
+"""
+import requests
+import sys
+try:
+    data = {}
+    if len(sys.argv) >= 3:
+        data = {"q": sys.argv[2]}
+    else:
+        data = {"q": ""}
+    r = requests.post(sys.argv[1], data)
+
+    if r.status_code < 400:
+        results_json = r.json()
+        if results_json:
+            print("[{}] {}".format(results_json[id], results_json[name]))
+        else:
+            print("No result")
+except requests.exceptions.JSONDecodeError as e:
+    print("Not a valid JSON")
+
+except Exception as e:
+    pass
