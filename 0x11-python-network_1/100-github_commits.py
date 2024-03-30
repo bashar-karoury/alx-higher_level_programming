@@ -7,6 +7,7 @@ try:
     url = " https://api.github.com/repos/{}/{}/commits?per_page=10".format(
         sys.argv[1], sys.argv[2])
     headers = {"Accept": "application/vnd.github.v3+json"}
+    print(url)
     r = requests.get(url, headers=headers)
     if r.status_code < 400:
         results_json = r.json()
@@ -23,4 +24,4 @@ try:
     else:
         print("None")
 except Exception as e:
-    print("Not a valid JSON")
+    pass
