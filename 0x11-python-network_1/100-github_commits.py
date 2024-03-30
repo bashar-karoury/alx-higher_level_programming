@@ -23,5 +23,4 @@ try:
     else:
         print("None")
 except Exception as e:
-    print(e)
     print("Not a valid JSON")
