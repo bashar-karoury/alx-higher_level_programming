@@ -13,7 +13,7 @@ try:
         if results_json:
             counter = 0
             for commit in results_json:
-                if counter > 10:
+                if counter >= 10:
                     break
                 author = commit['commit']['author']
                 print("{}: {}".format(commit['sha'], author['name']))
