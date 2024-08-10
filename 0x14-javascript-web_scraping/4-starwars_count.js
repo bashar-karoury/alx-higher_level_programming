@@ -6,11 +6,11 @@ request(url, function (error, response, body) {
   if (!error) {
     const data = JSON.parse(body);
     let count = 0;
-    const rootUrl = `${response.request.uri.protocol}//${response.request.uri.host}`;
-    const character = `${rootUrl}/api/people/${id}/`;
     for (const result of data.results) {
-      if (result.characters.includes(character)) {
-        count++;
+      for (const character of result.characters) {
+        if (character.endsWith(`/${id}/`)) {
+          count++;
+        }
       }
     }
     console.log(count);
