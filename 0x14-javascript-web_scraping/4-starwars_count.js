@@ -2,7 +2,7 @@
 const request = require('request');
 const url = process.argv[2];
 const id = 18;
-const character = `https://swapi-api.alx-tools.com/api/people/${id}/`;
+const character = `http://swapi.co/api/people/${id}/`;
 request(url, function (error, response, body) {
   if (!error) {
     const data = JSON.parse(body);
